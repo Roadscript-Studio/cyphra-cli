@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# CMake and build output
+/build/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+Testing/
+CTestTestfile.cmake
+
+# CLion / JetBrains
+.idea/
+*.iml
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node / frontend dependencies
+node_modules/
+dist/
+
