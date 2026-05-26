@@ -25,3 +25,6 @@ __pycache__/
 node_modules/
 dist/
 
+# Local datasets and generated analysis output
+datasets/
+tests/artifacts/

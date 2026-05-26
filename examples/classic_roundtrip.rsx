@@ -1,5 +1,5 @@
 let input = "tests/fixtures/input/input.jpg"
-let output = "/tmp/roadscript_classic_example.png"
+let output = "roadscript_classic_example.png"
 
 embed {
   in: input

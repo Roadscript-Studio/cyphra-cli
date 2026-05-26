@@ -473,8 +473,6 @@ namespace roadscript::cli {
         printKeyValue(out, "Version", RS_CLI_VERSION);
         printKeyValue(out, "CLI", "rse");
         printKeyValue(out, "Protocol default", "classic");
-        printKeyValue(out, "PRNG", "Roadscript PRNG v1");
-        printKeyValue(out, "Haar", "Roadscript Haar v1");
     }
 
     void printDoctor(std::ostream &out) {
@@ -483,8 +481,6 @@ namespace roadscript::cli {
         printKeyValue(out, "Engine", "ready");
         printKeyValue(out, "OpenCV", std::string("available (") + CV_VERSION + ")");
         printKeyValue(out, "Protocol default", "classic");
-        printKeyValue(out, "PRNG", "Roadscript PRNG v1");
-        printKeyValue(out, "Haar", "Roadscript Haar v1");
     }
 
     void printConfig(std::ostream &out) {

@@ -11,12 +11,15 @@ It depends on an installed `RoadscriptEngine` package.
 
 ## Prerequisite
 
-Install the Engine repository first, for example:
+If you have access to the private Roadscript Engine repository, install it
+first and note the resulting CMake package directory.
+
+Example:
 
 ```bash
 cmake -S /path/to/roadscript-engine -B /path/to/roadscript-engine/build \
   -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX=/tmp/roadscript-install
+  -DCMAKE_INSTALL_PREFIX=/path/to/roadscript-engine/install
 cmake --build /path/to/roadscript-engine/build
 cmake --install /path/to/roadscript-engine/build
 ```
@@ -26,7 +29,7 @@ cmake --install /path/to/roadscript-engine/build
 ```bash
 cmake -S . -B build \
   -DCMAKE_BUILD_TYPE=Release \
-  -DRoadscriptEngine_DIR=/tmp/roadscript-install/lib/cmake/RoadscriptEngine
+  -DRoadscriptEngine_DIR=/path/to/roadscript-engine/install/lib/cmake/RoadscriptEngine
 cmake --build build
 ```
 
@@ -45,12 +48,12 @@ first run.
 ./build/rse embed \
   --protocol classic \
   --in tests/fixtures/input/input.jpg \
-  --out /tmp/rse_classic.png \
+  --out ./rse_classic.png \
   --msg-block "hello roadscript"
 
 ./build/rse verify \
   --protocol classic \
-  --in /tmp/rse_classic.png
+  --in ./rse_classic.png
 ```
 
 ## Next Steps

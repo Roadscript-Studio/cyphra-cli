@@ -1,17 +1,13 @@
-# Classic CRC Mismatch Edge Cases
+# Classic Verification Edge Cases
 
-This directory documents two known deterministic Classic payload recovery
-failures observed during corpus evaluation:
+This directory holds optional reference artifacts for a small set of Classic
+verification edge cases used during manual regression checks:
 
 - `000000020333.jpg`
 - `000000035279.jpg`
 
-These cases are useful because:
-
-- embedding succeeds
-- payload recovery fails with a CRC mismatch
-- the failure is deterministic
-- the result is a payload recovery failure, not an engine crash
+These cases are useful because they let the CLI and tooling be exercised
+against repeatable non-success outcomes without relying on private datasets.
 
 If local preserved artifacts are available, the filenames in this directory are
 intended to follow:
@@ -44,14 +40,5 @@ Example commands:
   --json
 ```
 
-Expected interpretation:
-
-- embedding: succeeds
-- payload recovery: fails
-- failure category: `payload_crc_mismatch`
-
-Use these cases for future regression/debug work when you need to separate:
-
-- protocol support-envelope rejections
-- payload recovery failures
-- runtime/tool execution failures
+Use these cases when comparing CLI behavior across builds or validating
+reporting paths in the surrounding tooling.

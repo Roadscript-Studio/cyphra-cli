@@ -3,7 +3,8 @@
 `rse` is the standalone command-line interface for Roadscript.
 
 This repository builds `rse` against an installed `RoadscriptEngine` package.
-If you have not installed the engine yet, start with
+In practice that package is expected to come from a separate Engine install.
+If you have not installed the engine package yet, start with
 [Getting Started](getting-started.md).
 
 Core commands:
@@ -25,12 +26,12 @@ Classic embed and verify:
 ./build/rse embed \
   --protocol classic \
   --in tests/fixtures/input/input.jpg \
-  --out /tmp/rse_classic.png \
+  --out ./rse_classic.png \
   --msg-block "hello roadscript"
 
 ./build/rse verify \
   --protocol classic \
-  --in /tmp/rse_classic.png
+  --in ./rse_classic.png
 ```
 
 Protocol planning with `info`:
@@ -48,7 +49,7 @@ Most operational commands support `--json` for machine-readable output.
 ```bash
 ./build/rse verify \
   --protocol classic \
-  --in /tmp/rse_classic.png \
+  --in ./rse_classic.png \
   --json
 ```
 

@@ -50,7 +50,7 @@ DEFAULT_RECTANGLES = [
 def parse_args() -> argparse.Namespace:
     """Parse CLI options for the synthetic Mosaic support probe."""
     parser = argparse.ArgumentParser(
-        description="Generate deterministic synthetic images to probe the current Mosaic support envelope.",
+        description="Generate deterministic synthetic images to compare Mosaic CLI behavior by image size.",
     )
     parser.add_argument("--rse", type=Path, required=True, help="Path to the rse executable.")
     parser.add_argument("--output-dir", type=Path, required=True, help="Directory for generated probe artifacts.")
@@ -64,7 +64,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--rectangles", action="store_true", help="Also probe a small set of controlled rectangle sizes.")
     parser.add_argument("--csv", type=Path, default=None, help="Write detailed per-size results as CSV.")
     parser.add_argument("--json", dest="json_path", type=Path, default=None, help="Write combined config, rows, and summary as JSON.")
-    parser.add_argument("--sqlite", type=Path, default=None, help="Append this probe run to a SQLite database for DataGrip analysis.")
+    parser.add_argument("--sqlite", type=Path, default=None, help="Append this probe run to a SQLite database for local analysis.")
     parser.add_argument(
         "--jobs",
         default="1",

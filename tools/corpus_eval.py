@@ -43,7 +43,7 @@ DEFAULT_QUICK_LIMIT = 25
 def parse_args() -> argparse.Namespace:
     """Parse corpus-evaluation CLI arguments."""
     parser = argparse.ArgumentParser(
-        description="Evaluate Roadscript robustness and performance across a local image corpus.",
+        description="Evaluate Roadscript CLI behavior and performance across a local image corpus.",
     )
     parser.add_argument("--rse", type=Path, required=True, help="Path to the rse executable.")
     parser.add_argument("--input-dir", type=Path, required=True, help="Directory of input images.")
@@ -63,7 +63,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--step", type=float, default=30.0, help="Watermark step/SNR control (default: 30.0).")
     parser.add_argument("--csv", type=Path, default=None, help="Write detailed per-image results as CSV.")
     parser.add_argument("--json", dest="json_path", type=Path, default=None, help="Write combined summary and rows as JSON.")
-    parser.add_argument("--sqlite", type=Path, default=None, help="Append this run to a SQLite database for DataGrip analysis.")
+    parser.add_argument("--sqlite", type=Path, default=None, help="Append this run to a SQLite database for local analysis.")
     parser.add_argument("--failed-manifest", type=Path, default=None, help="Write failed-case rows as JSON.")
     parser.add_argument("--analysis-json", type=Path, default=None, help="Write a compact support-envelope analysis report as JSON.")
     parser.add_argument("--support-summary-json", type=Path, default=None, help="Write protocol support-boundary summary as JSON.")

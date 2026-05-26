@@ -4,7 +4,7 @@ Roadscript CLI includes a small workflow DSL for scripted `rse` execution.
 
 The runtime is intentionally conservative:
 
-- it reuses the same internal command model as the normal CLI
+- it follows the same command behavior and validation rules as the normal CLI
 - it supports `version`, `doctor`, `config show`, `info`, `embed`, `extract`,
   and `verify`
 - it supports `let` bindings, explicit-list loops, `glob(...)` loops, and
@@ -16,7 +16,7 @@ Example:
 
 ```rsx
 let input = "tests/fixtures/input/input.jpg"
-let output = "/tmp/rse_classic.png"
+let output = "rse_classic.png"
 
 embed {
   in: input

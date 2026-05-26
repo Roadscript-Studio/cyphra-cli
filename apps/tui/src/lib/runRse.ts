@@ -22,9 +22,9 @@ const HELP_LINES: ReadonlyArray<RunRseResult> = [
 	{ kind: 'system', text: '  clear' },
 	{ kind: 'hint', text: 'Examples:' },
 	{ kind: 'system', text: '  info --in ./tests/fixtures/input/input.jpg' },
-	{ kind: 'system', text: '  embed --in ./tests/fixtures/input/input.jpg --out /tmp/rse.png --msg-block hello' },
-	{ kind: 'system', text: '  extract --in /tmp/rse.png' },
-	{ kind: 'system', text: '  verify --in /tmp/rse.png' },
+	{ kind: 'system', text: '  embed --in ./tests/fixtures/input/input.jpg --out ./rse.png --msg-block hello' },
+	{ kind: 'system', text: '  extract --in ./rse.png' },
+	{ kind: 'system', text: '  verify --in ./rse.png' },
 ] as const;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -188,7 +188,7 @@ export async function runRse(command: string): Promise<RunRseResult[]> {
 				resolve([
 					{ kind: 'error', text: 'Error: rse binary not found.' },
 					{ kind: 'hint', text: 'Build it with:' },
-					{ kind: 'hint', text: 'cmake -S . -B build -DRoadscriptEngine_DIR=/tmp/roadscript-install/lib/cmake/RoadscriptEngine' },
+					{ kind: 'hint', text: 'cmake -S . -B build -DRoadscriptEngine_DIR=/path/to/roadscript-engine/install/lib/cmake/RoadscriptEngine' },
 					{ kind: 'hint', text: 'cmake --build build --target rse' },
 					{ kind: 'hint', text: 'Or set:' },
 					{ kind: 'hint', text: 'export RSE_BIN=/path/to/rse' },

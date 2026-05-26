@@ -1,7 +1,7 @@
 let input = "tests/fixtures/input/camera.jpg"
-let output = "/tmp/roadscript_mosaic_example.png"
-let debug_json = "/tmp/roadscript_mosaic_example.json"
-let debug_svg = "/tmp/roadscript_mosaic_example.svg"
+let output = "roadscript_mosaic_example.png"
+let debug_json = "roadscript_mosaic_example.json"
+let debug_svg = "roadscript_mosaic_example.svg"
 
 embed {
   in: input
