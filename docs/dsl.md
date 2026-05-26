@@ -34,8 +34,8 @@ extract {
 Run a workflow:
 
 ```sh
-./build/rse run workflow.rsx
-./build/rse run workflow.rsx --dry-run
+./build/rse run examples/classic_roundtrip.rsx --dry-run
+./build/rse run examples/batch_info.rsx --dry-run
 ```
 
 Use `--dry-run` before a real run when a workflow writes files or expands

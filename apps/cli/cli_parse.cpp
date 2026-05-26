@@ -133,7 +133,7 @@ namespace roadscript::cli {
             out << "\n";
             printHelpHeading(out, "EXAMPLES");
             printExampleCommand(out, std::string(argv0) + " run examples/classic_roundtrip.rsx --dry-run");
-            printExampleCommand(out, std::string(argv0) + " run examples/mosaic_debug.rsx");
+            printExampleCommand(out, std::string(argv0) + " run examples/mosaic_debug.rsx --dry-run");
             out << "\n";
             printHelpHeading(out, "JSON OUTPUT");
             printNoteLine(out, "Workflow JSON mode is not supported yet.");
@@ -807,7 +807,7 @@ namespace roadscript::cli {
         }
         if (argc < 3) {
             printHumanError(std::cerr, "missing required workflow script path.");
-            printTryLine(std::cerr, std::string(argv0) + " run workflow.rsx --dry-run");
+            printTryLine(std::cerr, std::string(argv0) + " run examples/classic_roundtrip.rsx --dry-run");
             printRunUsage(std::cerr, argv0);
             result.exitCode = 1;
             return result;
@@ -857,7 +857,7 @@ namespace roadscript::cli {
 
         if (!sawScript || result.options.scriptPath.empty()) {
             printHumanError(std::cerr, "missing required workflow script path.");
-            printTryLine(std::cerr, std::string(argv0) + " run workflow.rsx --dry-run");
+            printTryLine(std::cerr, std::string(argv0) + " run examples/classic_roundtrip.rsx --dry-run");
             printRunUsage(std::cerr, argv0);
             result.exitCode = 1;
             return result;

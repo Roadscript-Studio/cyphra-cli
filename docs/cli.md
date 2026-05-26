@@ -57,8 +57,8 @@ Most operational commands support `--json` for machine-readable output.
 The CLI also exposes the Roadscript workflow runtime:
 
 ```bash
-./build/rse run workflow.rsx
-./build/rse run workflow.rsx --dry-run
+./build/rse run examples/classic_roundtrip.rsx --dry-run
+./build/rse run examples/mosaic_debug.rsx --dry-run
 ```
 
 See [DSL Reference](dsl.md) for workflow syntax and limitations.
