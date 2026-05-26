@@ -1,21 +1,12 @@
 # DSL Reference
 
-Roadscript includes a small workflow DSL for scripted CLI execution:
+Roadscript CLI includes a small workflow DSL for scripted `rse` execution.
 
-Run the full language reference with:
-```sh
-rse run examples/language_reference.rsx --dry-run
-```
-
-```sh
-./cmake-build-debug/rse run workflow.rsx
-./cmake-build-debug/rse run workflow.rsx --dry-run
-```
-
-The v0.1 runtime is intentionally conservative:
+The runtime is intentionally conservative:
 
 - it reuses the same internal command model as the normal CLI
-- it supports `version`, `doctor`, `config show`, `info`, `embed`, `extract`, and `verify`
+- it supports `version`, `doctor`, `config show`, `info`, `embed`, `extract`,
+  and `verify`
 - it supports `let` bindings, explicit-list loops, `glob(...)` loops, and
   `if exists(...)` / `if not exists(...)`
 - it stops on the first failing workflow step
@@ -40,6 +31,13 @@ extract {
 }
 ```
 
+Run a workflow:
+
+```sh
+./build/rse run workflow.rsx
+./build/rse run workflow.rsx --dry-run
+```
+
 Use `--dry-run` before a real run when a workflow writes files or expands
 `glob(...)` loops.
 
@@ -50,14 +48,6 @@ Current runtime behavior:
 - expands `glob(...)` locally in deterministic lexicographic order
 - reports empty glob loops explicitly as skipped
 - never prints key contents in dry-run previews or workflow summaries
-
-See [CLI](cli.md) for the command entry points that host workflow execution.
-
-Repository examples:
-
-- `examples/classic_roundtrip.rsx`
-- `examples/mosaic_debug.rsx`
-- `examples/batch_info.rsx`
 
 Current v0.1 limitations:
 

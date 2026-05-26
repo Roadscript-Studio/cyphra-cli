@@ -60,7 +60,7 @@ Example single-protocol run:
 
 ```sh
 python3 tools/corpus_eval.py \
-  --rse ./cmake-build-debug/rse \
+  --rse ./build/rse \
   --input-dir datasets/coco/val2017 \
   --output-dir tests/artifacts/corpus/coco-classic \
   --protocol classic \
@@ -74,7 +74,7 @@ Example protocol comparison run:
 
 ```sh
 python3 tools/corpus_eval.py \
-  --rse ./cmake-build-debug/rse \
+  --rse ./build/rse \
   --input-dir datasets/coco/val2017 \
   --output-dir tests/artifacts/corpus/coco-compare \
   --protocol both \
@@ -276,7 +276,7 @@ Both corpus tools can also append runs to a SQLite database:
 
 ```sh
 python3 tools/corpus_eval.py \
-  --rse ./cmake-build-debug/rse \
+  --rse ./build/rse \
   --input-dir datasets/coco/val2017 \
   --output-dir tests/artifacts/corpus/coco-classic \
   --protocol classic \
@@ -286,7 +286,7 @@ python3 tools/corpus_eval.py \
 
 ```sh
 python3 tools/mosaic_support_probe.py \
-  --rse ./cmake-build-debug/rse \
+  --rse ./build/rse \
   --output-dir tests/artifacts/corpus/mosaic-support-probe \
   --sizes 1128,1136 \
   --sqlite tests/artifacts/corpus/mosaic-support-probe/results.sqlite
@@ -433,7 +433,7 @@ Example:
 
 ```sh
 python3 tools/mosaic_support_probe.py \
-  --rse ./cmake-build-debug/rse \
+  --rse ./build/rse \
   --output-dir tests/artifacts/corpus/mosaic-support-probe \
   --sizes 320,640,1024 \
   --csv tests/artifacts/corpus/mosaic-support-probe/results.csv \
@@ -444,7 +444,7 @@ Optional rectangle coverage:
 
 ```sh
 python3 tools/mosaic_support_probe.py \
-  --rse ./cmake-build-debug/rse \
+  --rse ./build/rse \
   --output-dir tests/artifacts/corpus/mosaic-support-probe \
   --rectangles
 ```

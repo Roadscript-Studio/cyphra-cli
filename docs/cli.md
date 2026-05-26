@@ -1,6 +1,10 @@
 # CLI
 
-`rse` is the reference command-line interface for Roadscript Engine.
+`rse` is the standalone command-line interface for Roadscript.
+
+This repository builds `rse` against an installed `RoadscriptEngine` package.
+If you have not installed the engine yet, start with
+[Getting Started](getting-started.md).
 
 Core commands:
 
@@ -18,13 +22,13 @@ Core commands:
 Classic embed and verify:
 
 ```bash
-./cmake-build-debug/rse embed \
+./build/rse embed \
   --protocol classic \
   --in tests/fixtures/input/input.jpg \
   --out /tmp/rse_classic.png \
   --msg-block "hello roadscript"
 
-./cmake-build-debug/rse verify \
+./build/rse verify \
   --protocol classic \
   --in /tmp/rse_classic.png
 ```
@@ -32,7 +36,7 @@ Classic embed and verify:
 Protocol planning with `info`:
 
 ```bash
-./cmake-build-debug/rse info \
+./build/rse info \
   --protocol mosaic \
   --in tests/fixtures/input/input.jpg
 ```
@@ -42,7 +46,7 @@ Protocol planning with `info`:
 Most operational commands support `--json` for machine-readable output.
 
 ```bash
-./cmake-build-debug/rse verify \
+./build/rse verify \
   --protocol classic \
   --in /tmp/rse_classic.png \
   --json
@@ -53,8 +57,8 @@ Most operational commands support `--json` for machine-readable output.
 The CLI also exposes the Roadscript workflow runtime:
 
 ```bash
-./cmake-build-debug/rse run workflow.rsx
-./cmake-build-debug/rse run workflow.rsx --dry-run
+./build/rse run workflow.rsx
+./build/rse run workflow.rsx --dry-run
 ```
 
 See [DSL Reference](dsl.md) for workflow syntax and limitations.
@@ -62,6 +66,4 @@ See [DSL Reference](dsl.md) for workflow syntax and limitations.
 ## Related Topics
 
 - [Getting Started](getting-started.md)
-- [Classic Protocol](protocols/classic.md)
-- [Mosaic Protocol](protocols/mosaic.md)
 - [Corpus Evaluation](corpus_eval.md)

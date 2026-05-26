@@ -21,14 +21,19 @@ const HELP_LINES: ReadonlyArray<RunRseResult> = [
 	{ kind: 'hint', text: 'TUI-local command:' },
 	{ kind: 'system', text: '  clear' },
 	{ kind: 'hint', text: 'Examples:' },
-	{ kind: 'system', text: '  info --in ../../tests/fixtures/input/input.jpg' },
-	{ kind: 'system', text: '  embed --in ../../tests/fixtures/input/input.jpg --out /tmp/rse.png --msg-block hello' },
+	{ kind: 'system', text: '  info --in ./tests/fixtures/input/input.jpg' },
+	{ kind: 'system', text: '  embed --in ./tests/fixtures/input/input.jpg --out /tmp/rse.png --msg-block hello' },
 	{ kind: 'system', text: '  extract --in /tmp/rse.png' },
 	{ kind: 'system', text: '  verify --in /tmp/rse.png' },
 ] as const;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const REPO_ROOT = path.resolve(__dirname, '../../../..');
+const LOCAL_RSE_CANDIDATES = [
+	path.join(REPO_ROOT, 'build', 'rse'),
+	path.join(REPO_ROOT, 'cmake-build-debug', 'rse'),
+] as const;
 
 function pushOutputLine(
 	output: Array<{ kind: 'stdout' | 'stderr'; text: string }>,
@@ -147,14 +152,18 @@ export async function runRse(command: string): Promise<RunRseResult[]> {
 	}
 
 	const envPath = process.env.RSE_BIN;
-	const localPath = path.resolve(__dirname, '../../../..', 'cmake-build-debug', 'rse');
 
 	let resolvedPath: string | null = null;
 
 	if (envPath && fs.existsSync(envPath)) {
 		resolvedPath = envPath;
-	} else if (fs.existsSync(localPath)) {
-		resolvedPath = localPath;
+	} else {
+		for (const candidate of LOCAL_RSE_CANDIDATES) {
+			if (fs.existsSync(candidate)) {
+				resolvedPath = candidate;
+				break;
+			}
+		}
 	}
 
 	return new Promise<RunRseResult[]>((resolve) => {
@@ -179,7 +188,8 @@ export async function runRse(command: string): Promise<RunRseResult[]> {
 				resolve([
 					{ kind: 'error', text: 'Error: rse binary not found.' },
 					{ kind: 'hint', text: 'Build it with:' },
-					{ kind: 'hint', text: 'cmake --build cmake-build-debug --target rse' },
+					{ kind: 'hint', text: 'cmake -S . -B build -DRoadscriptEngine_DIR=/tmp/roadscript-install/lib/cmake/RoadscriptEngine' },
+					{ kind: 'hint', text: 'cmake --build build --target rse' },
 					{ kind: 'hint', text: 'Or set:' },
 					{ kind: 'hint', text: 'export RSE_BIN=/path/to/rse' },
 				]);

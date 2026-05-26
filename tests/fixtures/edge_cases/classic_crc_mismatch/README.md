@@ -29,7 +29,7 @@ automated test suite.
 Example commands:
 
 ```sh
-./cmake-build-debug/rse embed \
+./build/rse embed \
   --protocol classic \
   --in datasets/coco/val2017/000000020333.jpg \
   --out /tmp/000000020333_classic.png \
@@ -37,7 +37,7 @@ Example commands:
   --step 30 \
   --json
 
-./cmake-build-debug/rse verify \
+./build/rse verify \
   --protocol classic \
   --in /tmp/000000020333_classic.png \
   --step 30 \

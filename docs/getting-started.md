@@ -1,28 +1,39 @@
 # Getting Started
 
-Roadscript Engine is a native watermarking system with:
+Roadscript CLI is the standalone application repository for:
 
-- a C++ engine library
 - the `rse` command-line interface
-- a small workflow DSL for scripted CLI runs
+- the workflow DSL runtime
+- corpus evaluation and probe tooling
+- the experimental TUI frontend
 
-For most users, the recommended starting point is:
+It depends on an installed `RoadscriptEngine` package.
 
-1. build the project
-2. run the regression suite
-3. try a small Classic embed and verify flow
+## Prerequisite
 
-## Build and Test
+Install the Engine repository first, for example:
 
 ```bash
-cmake --build cmake-build-debug
-ctest --test-dir cmake-build-debug --output-on-failure
+cmake -S /path/to/roadscript-engine -B /path/to/roadscript-engine/build \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=/tmp/roadscript-install
+cmake --build /path/to/roadscript-engine/build
+cmake --install /path/to/roadscript-engine/build
 ```
 
-Or use the wrapper:
+## Configure and Build
 
 ```bash
-./scripts/test.sh
+cmake -S . -B build \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DRoadscriptEngine_DIR=/tmp/roadscript-install/lib/cmake/RoadscriptEngine
+cmake --build build
+```
+
+The local CLI binary will be:
+
+```bash
+./build/rse
 ```
 
 ## First CLI Run
@@ -31,13 +42,13 @@ Classic is the stable default protocol family and the best starting point for a
 first run.
 
 ```bash
-./cmake-build-debug/rse embed \
+./build/rse embed \
   --protocol classic \
   --in tests/fixtures/input/input.jpg \
   --out /tmp/rse_classic.png \
   --msg-block "hello roadscript"
 
-./cmake-build-debug/rse verify \
+./build/rse verify \
   --protocol classic \
   --in /tmp/rse_classic.png
 ```
@@ -46,6 +57,4 @@ first run.
 
 - See [CLI](cli.md) for the command surface.
 - See [DSL Reference](dsl.md) for scripted workflows.
-- See [Classic Protocol](protocols/classic.md) and
-  [Mosaic Protocol](protocols/mosaic.md) for protocol-specific guidance.
-- See [Contributing](contributing.md) for local development workflows.
+- See [Corpus Evaluation](corpus_eval.md) for dataset-scale tooling.

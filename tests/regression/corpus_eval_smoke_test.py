@@ -4,7 +4,7 @@
 python3 tools/download_dataset.py --dataset coco-val --limit 50
 
 python3 tools/corpus_eval.py \
-  --rse ./cmake-build-debug/rse \
+  --rse ./build/rse \
   --input-dir datasets/coco/val2017 \
   --output-dir tests/artifacts/corpus/coco-smoke \
   --protocol both \
