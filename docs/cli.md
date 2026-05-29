@@ -1,6 +1,6 @@
 # CLI
 
-`rse` is the standalone command-line interface for Roadscript.
+`rse` is the standalone command-line interface for Cyphra CLI.
 
 This repository builds `rse` against an installed `RoadscriptEngine` package.
 In practice that package is expected to come from a separate Engine install.

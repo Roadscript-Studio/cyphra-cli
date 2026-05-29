@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.25)
 
 project(RoadscriptCLI VERSION 0.1.0 LANGUAGES CXX)
 
-option(RS_ENABLE_WARNINGS "Enable compiler warnings for Roadscript CLI targets." ON)
-option(RS_WARNINGS_AS_ERRORS "Treat compiler warnings as errors for Roadscript CLI targets." OFF)
+option(RS_ENABLE_WARNINGS "Enable compiler warnings for Cyphra CLI targets." ON)
+option(RS_WARNINGS_AS_ERRORS "Treat compiler warnings as errors for Cyphra CLI targets." OFF)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

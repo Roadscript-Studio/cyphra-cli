@@ -147,7 +147,7 @@ namespace roadscript::cli {
             out
                 << "  " << argv0 << " config show [--color <mode>]\n\n";
             printHelpHeading(out, "DESCRIPTION");
-            printKeyValue(out, "Purpose", "Inspect current Roadscript CLI defaults and configuration source");
+            printKeyValue(out, "Purpose", "Inspect current Cyphra CLI defaults and configuration source");
             out << "\n";
             printHelpHeading(out, "COMMANDS");
             printKeyValue(out, "show", "Display the current configuration screen");
@@ -171,7 +171,7 @@ namespace roadscript::cli {
             out
                 << "  " << argv0 << " config show [--color <mode>]\n\n";
             printHelpHeading(out, "DESCRIPTION");
-            printKeyValue(out, "Purpose", "Show current Roadscript CLI defaults and where they come from");
+            printKeyValue(out, "Purpose", "Show current Cyphra CLI defaults and where they come from");
             out << "\n";
             printHelpHeading(out, "OPTIONAL FLAGS");
             printKeyValue(out, "--color", "auto, always, never");
@@ -390,7 +390,7 @@ namespace roadscript::cli {
     }
 
     void printGeneralUsage(std::ostream &out, std::string_view argv0) {
-        printTitle(out, "Roadscript CLI");
+        printTitle(out, "Cyphra CLI");
         printHelpHeading(out, "USAGE");
         out << "  " << argv0 << " <command> [options]\n\n";
         printHelpHeading(out, "DESCRIPTION");

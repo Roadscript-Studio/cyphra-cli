@@ -43,7 +43,7 @@ DEFAULT_QUICK_LIMIT = 25
 def parse_args() -> argparse.Namespace:
     """Parse corpus-evaluation CLI arguments."""
     parser = argparse.ArgumentParser(
-        description="Evaluate Roadscript CLI behavior and performance across a local image corpus.",
+        description="Evaluate Cyphra CLI behavior and performance across a local image corpus.",
     )
     parser.add_argument("--rse", type=Path, required=True, help="Path to the rse executable.")
     parser.add_argument("--input-dir", type=Path, required=True, help="Directory of input images.")

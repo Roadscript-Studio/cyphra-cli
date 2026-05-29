@@ -1,6 +1,6 @@
 # DSL Reference
 
-Roadscript CLI includes a small workflow DSL for scripted `rse` execution.
+Cyphra CLI includes a small workflow DSL for scripted `rse` execution.
 
 The runtime is intentionally conservative:
 

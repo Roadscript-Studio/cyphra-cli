@@ -1,6 +1,6 @@
-# Roadscript CLI
+# Cyphra CLI
 
-`roadscript-cli` is the public command-line, workflow DSL, and local TUI repository for Roadscript.
+`cyphra-cli` is the public command-line, workflow DSL, and local TUI repository for Cyphra CLI.
 
 Roadscript is an authenticity tooling project focused on media provenance, invisible watermarking workflows, and verification-oriented application infrastructure. This repository demonstrates the public application layer around Roadscript while keeping the private core engine implementation separate.
 
@@ -11,11 +11,11 @@ This repository is part of the Roadscript public/private repository ecosystem:
 | Repository | Visibility | Purpose |
 |---|---:|---|
 | [`roadscript-docs`](https://github.com/Roadscript-Studio/roadscript-docs) | Public | Public overview, architecture notes, repository boundaries, and development milestones. |
-| [`roadscript-cli`](https://github.com/Roadscript-Studio/roadscript-cli) | Public | Standalone CLI, workflow DSL, local TUI prototype, examples, tests, and tooling. |
+| [`cyphra-cli`](https://github.com/Roadscript-Studio/cyphra-cli) | Public | Standalone CLI, workflow DSL, local TUI prototype, examples, tests, and tooling. |
 | [`roadscript-site`](https://github.com/Roadscript-Studio/roadscript-site) | Public | Public website and sample-driven demo surface. |
 | `roadscript-engine` | Private | Private C++ core package consumed by the application layer. |
 
-`roadscript-cli` focuses on developer-facing workflow surfaces, command orchestration, examples, and application-layer tests. It does not include the private Engine source.
+`cyphra-cli` focuses on developer-facing workflow surfaces, command orchestration, examples, and application-layer tests. It does not include the private Engine source.
 
 ## Overview
 
@@ -23,7 +23,7 @@ This repository contains:
 
 - a C++ CLI frontend
 - the `rse` command-line application
-- the Roadscript workflow DSL
+- the Cyphra workflow DSL
 - a local TUI prototype
 - runnable workflow examples
 - CLI-level regression tests and fixtures
@@ -45,7 +45,7 @@ The private `roadscript-engine` repository owns the core C++ engine implementati
 This split is intentional:
 
 - `roadscript-engine` owns the private core package and implementation details.
-- `roadscript-cli` owns the public CLI, workflow DSL, local TUI prototype, tests, examples, and tooling.
+- `cyphra-cli` owns the public CLI, workflow DSL, local TUI prototype, tests, examples, and tooling.
 - The application layer consumes the Engine through a package boundary instead of directly bundling Engine source.
 - Public code demonstrates application architecture without exposing private Engine internals.
 
@@ -61,7 +61,7 @@ cmake -S . -B build \
 cmake --build build
 ```
 
-The resulting CLI binary is expected at:
+The resulting Cyphra CLI binary is expected at:
 
 ```text
 build/rse
@@ -106,7 +106,7 @@ The example workflow is designed to exercise the CLI and DSL planning path witho
 - Runnable workflow examples and CLI-level tests
 - Local TUI prototype for command exploration
 
-This repository is published to demonstrate Roadscript’s application architecture, tooling, tests, examples, and package-consumer design. It should not be interpreted as a complete commercial release.
+This repository is published to demonstrate Cyphra CLI’s application architecture, tooling, tests, examples, and package-consumer design. It should not be interpreted as a complete commercial release.
 
 ## Notes For Reviewers
 

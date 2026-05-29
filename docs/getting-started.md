@@ -1,6 +1,6 @@
 # Getting Started
 
-Roadscript CLI is the standalone application repository for:
+Cyphra CLI is the standalone application repository for:
 
 - the `rse` command-line interface
 - the workflow DSL runtime

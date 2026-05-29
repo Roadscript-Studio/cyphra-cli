@@ -1,6 +1,6 @@
 # Corpus Evaluation
 
-Roadscript CLI includes dataset-scale evaluation utilities for running `rse`
+Cyphra CLI includes dataset-scale evaluation utilities for running `rse`
 across local image collections and recording structured outputs for regression
 tracking.
 
